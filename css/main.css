@@ -1,0 +1,29 @@
+/*Global*/
+
+/*Utilities*/
+
+/*Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 40vh;
+    background-image: url(https://d207pkrvhz1w8t.cloudfront.net/slider-image-35622-orig-cropped.jpg);
+
+    background-position: right,bottom;
+    background-size: cover;
+}
+
+/*Register Form*/
+.form-container div{
+    display: grid;
+    
+
+}
+
+.form-container input{
+    margin-bottom: 1rem;
+}
+
+.form-container select{
+    margin-bottom: 1rem;
+}
