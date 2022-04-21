@@ -24,25 +24,55 @@ function Pet(name,age,gender,breed,service,ownername,contactphone){
 }
 
 // get the info from the inputs and store the information
-let inputName=document.getElementById("dogName");
-let inputAge=document.getElementById("dogAge");
-let inputGender=document.getElementById("dogGender");
-let inputBreed=document.getElementById("dogBreed");
-let inputService=document.getElementById("dogService");
-let inputownerName=document.getElementById("ownerName");
-let inputcontactPhone=document.getElementById("contactPhone");
+let inputName=document.getElementById("txtName");
+let inputAge=document.getElementById("txtAge");
+let inputGender=document.getElementById("txtGender");
+let inputBreed=document.getElementById("txtBreed");
+let inputService=document.getElementById("services");
+let inputownerName=document.getElementById("txtOwner");
+let inputcontactPhone=document.getElementById("txtOwnerPhone");
+
+function isValid(aPet){
+    //return false when the pet is not valid
+    //return true if the pet is valid
+    let valid=true;
+    if(aPet.dogName.length==0){
+        //if we get here it means that the name is not valid
+        valid=false;
+        console.error("Invalid name");
+        
+    }
+    if(aPet.typeService.length==0){
+        valid=false;
+        console.error("Invalid name");
+    }
+    if(aPet.contactPhone.length==0){
+        valid=false;
+        console.error("Invalid name");
+
+    }
+    return valid; // it could be true or false
+
+}
+
+
 function register(){
     //create the pet
-    let thePet = new Pet(inputName.value,inputAge.value, inputGender.value,);
-    console.log(thePet);
+    let thePet = new Pet(inputName.value,inputAge.value, inputGender.value,inputBreed.value,);
+    if(isValid(thePet)){
+
     //push the pet into the array
     petSalon.push(thePet);
+    displayCards()
+    
     //clear the inputs
     clearInputs();
+    }
 }
 
 function clearInputs(){
     inputName.value="";
+    inputAge.value="";
 }
 
 
