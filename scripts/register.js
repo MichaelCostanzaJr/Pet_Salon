@@ -11,6 +11,7 @@ let petSalon ={
     },
     pets:[]
 }
+let c=0;//this is a counter var
 
 function Pet(name,age,gender,breed,service,ownername,contactphone){
     this.dogName=name;
@@ -20,6 +21,7 @@ function Pet(name,age,gender,breed,service,ownername,contactphone){
     this.typeService=service;
     this.ownerName=ownername;
     this.contactPhone=contactphone;
+    this.id=c++;// increase the var 1 everytime that is used
 
 }
 
@@ -78,6 +80,49 @@ function clearInputs(){
     inputService.value="";
     inputownerName.value="";
     inputownerPhone.value="";
+}
+
+function deletePet(petId){
+    console.log("Deleting" + petId);
+    let deleteIndex;
+    //in this function--------
+    //travel the array (for loop)
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet =  petSalon.pets[i];
+        if(petId==pet.id){
+            //find the id (if)
+            //get the position in the array (store in a var)
+            let deleteIndex=i;
+            console.log("I found it in position:" + i)
+        }
+    //find the id (if)
+    //get the position in the array (store in a var)
+
+    }
+    
+    //remove from the array (splice())
+    petSalon.pets.splice(deleteIndex,1);
+    //remove from the html (remove())
+    document.getElementById(petId).remove();
+    //
+}
+
+function searchPet(petId){
+    console.log("Search" + petId);
+    let searchIndex;
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet = petSalon.pets[i];
+        if(petId==pet.id){
+            let searchIndex=i;
+        }
+    }
+    //previous actions
+        //add an inputSearch on the html
+        //add a search button on the html
+    // in this function-----
+        // travel the array (for loop)
+        // find the id (if)
+        // highlight the result
 }
 
 

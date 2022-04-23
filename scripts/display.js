@@ -16,14 +16,17 @@ function displayCards(){
     for(let i=0;i<petSalon.pets.length;i++){
         let pet = petSalon.pets[i];
         tmp+=`
-        <div class="pet">
-        <h4>${pet.dogName}</h4>
-        <label>${pet.dogAge}</label>
-        <label>${pet.dogGender}</label>
-        <label>${pet.dogBreed}</label>
-        <label>${pet.typeService}</label>
-        <label>${pet.ownerName}</label>
-        <label>${pet.contactPhone}</label>
+        <div id="${pet.id}" class="pet">
+            <div class="pet-header">
+                <h4>${pet.dogName}</h4>
+                <label>${pet.dogAge}</label>
+                <button onclick="deletePet(${pet.id});">🗑️</button>
+            </div>
+            <label>${pet.dogGender}</label>
+            <label>${pet.dogBreed}</label>
+            <label>${pet.typeService}</label>
+            <label>${pet.ownerName}</label>
+            <label>${pet.contactPhone}</label>
         </div>
         `;
         console.log(tmp)
