@@ -127,9 +127,11 @@ function searchPet(petId){
             let pet = petSalon.pets[i];
         }
         // find the id (if)
-        if(searchString === pet.name){
+        if(searchString.toLowerCase() === pet.name.toLowerCase){
             //highlight the result
             alert("I found it");
+        }else{
+            document.getElementById(pet.id).classList.remove("highlight");
         }
         // highlight the result
 }
