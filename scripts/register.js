@@ -58,12 +58,12 @@ function isValid(aPet){
 
 function register(){
     //create the pet
-    let thePet = new Pet(inputName.value,inputAge.value, inputGender.value,inputBreed.value,);
+    let thePet = new Pet(inputName.value,inputAge.value, inputGender.value,inputBreed.value,inputService.value,inputownerName.value,inputcontactPhone.value);
     if(isValid(thePet)){
 
     //push the pet into the array
-    petSalon.push(thePet);
-    displayCards()
+    petSalon.pets.push(thePet);
+    displayCards();
     
     //clear the inputs
     clearInputs();
@@ -73,6 +73,11 @@ function register(){
 function clearInputs(){
     inputName.value="";
     inputAge.value="";
+    inputGender.value="";
+    inputBreed.value="";
+    inputService.value="";
+    inputownerName.value="";
+    inputownerPhone.value="";
 }
 
 
@@ -82,5 +87,5 @@ let example1= new Pet("Jack",1,"male","german shepard","haircut","Michael","911"
 let example2= new Pet("Thor",12,"male","german shepard","haircut","Michael","911");
 
 let example3= new Pet("Sheba",14,"female","collie","nail trim","Michael","911");
-
-console.log(example1,example2,example3);
+petSalon.pets.push(example1,example2,example3);
+displayCards();

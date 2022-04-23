@@ -11,16 +11,22 @@ function displayPet(){
     document.getElementById("pets").innerHTML=tmp;
 }   
 // dispay the pets in cards
-function dispayCards(){
+function displayCards(){
     let tmp="";
     for(let i=0;i<petSalon.pets.length;i++){
         let pet = petSalon.pets[i];
-        tmp=`
-        <div class="pet>
-        <h4>${pet.name}</h4>
-        <label>${pet.age}</label>
+        tmp+=`
+        <div class="pet">
+        <h4>${pet.dogName}</h4>
+        <label>${pet.dogAge}</label>
+        <label>${pet.dogGender}</label>
+        <label>${pet.dogBreed}</label>
+        <label>${pet.typeService}</label>
+        <label>${pet.ownerName}</label>
+        <label>${pet.contactPhone}</label>
         </div>
         `;
+        console.log(tmp)
     }
     document.getElementById("pets").innerHTML=tmp;
 }
