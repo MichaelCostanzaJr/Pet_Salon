@@ -119,9 +119,18 @@ function searchPet(petId){
     //previous actions
         //add an inputSearch on the html
         //add a search button on the html
+        //get the string
+    let searchString =  document.getElementById("txtSearch").value; console.log("Searching" + searchString);
     // in this function-----
         // travel the array (for loop)
+        for(let i=0;i<petSalon.pets.length;i++){
+            let pet = petSalon.pets[i];
+        }
         // find the id (if)
+        if(searchString === pet.name){
+            //highlight the result
+            alert("I found it");
+        }
         // highlight the result
 }
 
